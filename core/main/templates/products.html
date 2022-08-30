@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+ 
+{% block content %}
+    <!--Main content-->
+    <section class="container margin-bottom-50">
+      <div class="tm-overflow-hidden row">
+        <h1>HELLO</h1>
+        <aside class="tm-gallery-aside col-lg-3 col-md-3 col-sm-4 col-xs-12">
+          <nav class="tm-gallery-nav">
+            <h2 class="tm-gallery-nav-title">Category <i class="fa fa-caret-up"></i></h2>
+            <ul>
+              {% for i in category %}
+              <li class="active">
+                  <a href="{% url 'car_categ' i.id %}"><img src="{{i.image.url}}" class="tm-gallery-list-img" alt="Image">{{i.title}}</a>
+                  <i class="fa fa-caret-right tm-gallery-list-fa"></i>
+              </li>
+              {% endfor %}
+              </li>
+            </ul>
+          </nav>
+          {% for i in callus %}
+          <div class="tm-call-us">
+            <h3 class="text-uppercase tm-call-us-title">{{i.title}}</h3>
+            <a href="tel:" class="tm-call-us-link">{{i.tell}}</a>
+          </div>  
+          {% endfor %}  
+        </aside>
+      </div>
+
+      <!--banner-->
+    </section> <!-- Main content -->
+{% endblock %}
